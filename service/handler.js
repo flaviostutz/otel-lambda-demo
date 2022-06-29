@@ -19,8 +19,15 @@ module.exports.hello = async (event) => {
     await axios.get(`https://random-data-api.com/api/vehicle/random_vehicle?size=${s}`);
   }
 
-  // console.log('response');
-  // console.log(resp.data);
+  if(Math.random() > 0.95) {
+    throw new Error("This is a random error that happens 5% of the time :)");
+  }
+
+  if(Math.random() > 0.99) {
+    console.log("I will hang forever in an infinite loop now!");
+    while(true) {
+    }
+  }
 
   const n = Math.random();
   // 70% of calls
