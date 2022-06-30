@@ -3,7 +3,7 @@ const axios = require('axios').default;
 
 module.exports.hello = async (event) => {
 
-  const users = [];
+  let users = [];
   if(Math.random() > 0.5) {
     const s = Math.random() * 200
     users = await axios.get(`https://randomuser.me/api/?results=${s}`);
