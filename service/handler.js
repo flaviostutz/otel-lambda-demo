@@ -5,17 +5,17 @@ module.exports.hello = async (event) => {
 
   let users = [];
   if(Math.random() > 0.5) {
-    const s = Math.random() * 200
+    const s = Math.random() * 10
     users = await axios.get(`https://randomuser.me/api/?results=${s}`);
   }
 
   if(Math.random() > 0.5) {
-    const s = Math.random() * 200
+    const s = Math.random() * 100
     await axios.get(`https://random-data-api.com/api/bank/random_bank?size=${s}`);
   }
 
   if(Math.random() > 0.7) {
-    const s = Math.random() * 200
+    const s = Math.random() * 100
     await axios.get(`https://random-data-api.com/api/vehicle/random_vehicle?size=${s}`);
   }
 
@@ -24,7 +24,7 @@ module.exports.hello = async (event) => {
   }
 
   if(Math.random() > 0.99) {
-    console.log("I will hang forever in an infinite loop now!");
+    console.log("I like to hangup 1% of the time ;)");
     while(true) {
     }
   }

@@ -1,9 +1,6 @@
 service: service
 frameworkVersion: '3'
 
-plugins:
-  - serverless-plugin-log-retention
-
 provider:
   name: aws
   runtime: nodejs12.x
@@ -12,8 +9,6 @@ provider:
     lambda: true
   stage: dev
   region: us-east-1
-
-custom:
   logRetentionInDays: 7
 
 functions:
@@ -21,7 +16,8 @@ functions:
     handler: handler.hello
     environment:
       AWS_LAMBDA_EXEC_WRAPPER: /opt/otel-handler
-      # OPENTELEMETRY_COLLECTOR_CONFIG_FILE: /service-dev-hello/otel-config.yml
+      #this is optional and only necessary if you want to tweak something
+      # OPENTELEMETRY_COLLECTOR_CONFIG_FILE: /var/task/collector.yml
     events:
       - http:
           path: /test
