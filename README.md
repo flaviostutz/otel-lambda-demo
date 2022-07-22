@@ -5,6 +5,10 @@ This example will deploy a Lambda service along with a Lambda layer for instrume
 
 The instrumentation is able to trace calls to other services invoked via http calls without direct instrumentation of the code.
 
+Useful links: 
+
+  * https://aws-otel.github.io/docs/getting-started/lambda/lambda-js
+
 ## Usage
 
 ### AWS X-Ray
